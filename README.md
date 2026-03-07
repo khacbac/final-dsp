@@ -1,22 +1,23 @@
 # DSP Final Project — FIR Equalizer & Music Genre Classifier
 
-**Môn:** Xử Lý Tín Hiệu Số | **Nhóm:** [Nhóm X]
+**Môn:** Xử Lý Tín Hiệu Số | **Nhóm:** [Nhóm ABNQ]
 
 ## Tổng Quan
 
 Dự án gồm 2 module chạy trong Jupyter Notebook, và **Streamlit Web App** để tương tác:
 
-| Module | File | Mô tả |
-|--------|------|-------|
-| FIR Equalizer | `equalizer.ipynb` | Bộ cân bằng âm thanh 10 bands, FIR Hamming |
-| ML Classifier | `ml_classification.ipynb` | Phân loại 10 thể loại nhạc (SVM + Random Forest) |
-| **Streamlit App** | `app.py` | GUI web: Equalizer + Phân loại thể loại |
+| Module            | File                      | Mô tả                                            |
+| ----------------- | ------------------------- | ------------------------------------------------ |
+| FIR Equalizer     | `equalizer.ipynb`         | Bộ cân bằng âm thanh 10 bands, FIR Hamming       |
+| ML Classifier     | `ml_classification.ipynb` | Phân loại 10 thể loại nhạc (SVM + Random Forest) |
+| **Streamlit App** | `app.py`                  | GUI web: Equalizer + Phân loại thể loại          |
 
 ---
 
 ## Cài Đặt
 
 ### Yêu cầu
+
 - Python **3.10+**
 - pip
 
@@ -60,6 +61,7 @@ jupyter notebook
 ### 2. Chạy Equalizer
 
 Mở `equalizer.ipynb`:
+
 - Đổi `AUDIO_FILE` ở cell 5 sang file `.wav` của bạn
 - Điều chỉnh `GAINS_DB` ở cell 6 (đơn vị dB, từ -12 đến +12)
 - Chạy: **Kernel → Restart & Run All**
@@ -90,6 +92,7 @@ Mở trình duyệt tại http://localhost:8501
 ### 4. Chạy ML Classifier
 
 Mở `ml_classification.ipynb`:
+
 - Đảm bảo thư mục `train-data/` và `test-data/` tồn tại
 - Đổi `PREDICT_FILE` ở cell 14 để dự đoán file mới
 - Chạy: **Kernel → Restart & Run All** (~10–20 phút lần đầu)
@@ -149,21 +152,21 @@ dsp-final/
 
 ### FIR Equalizer
 
-| Thông số | Giá trị |
-|----------|---------|
-| Tần số lấy mẫu | 44,100 Hz |
-| Phương pháp | FIR Bandpass, cửa sổ Hamming |
-| Số taps | 1,025 |
-| Số bands | 10 (20 Hz – 20 kHz) |
-| Dải gain | -12 dB đến +12 dB |
+| Thông số       | Giá trị                      |
+| -------------- | ---------------------------- |
+| Tần số lấy mẫu | 44,100 Hz                    |
+| Phương pháp    | FIR Bandpass, cửa sổ Hamming |
+| Số taps        | 1,025                        |
+| Số bands       | 10 (20 Hz – 20 kHz)          |
+| Dải gain       | -12 dB đến +12 dB            |
 
 ### ML Classifier
 
-| Thông số | Giá trị |
-|----------|---------|
-| Features | 82 (MFCC × 40, Chroma × 24, Contrast × 14, ZCR × 2, RMS × 2) |
-| Models | SVM (RBF) + Random Forest (n=200) |
-| Genres | 10 (blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock) |
+| Thông số | Giá trị                                                                       |
+| -------- | ----------------------------------------------------------------------------- |
+| Features | 82 (MFCC × 40, Chroma × 24, Contrast × 14, ZCR × 2, RMS × 2)                  |
+| Models   | SVM (RBF) + Random Forest (n=200)                                             |
+| Genres   | 10 (blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock) |
 
 ---
 
