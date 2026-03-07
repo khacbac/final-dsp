@@ -23,7 +23,7 @@
 - **Bands:** 10 bands từ 20Hz–20kHz (log scale)
 - **ML features:** MFCC(40) + Chroma(24) + SpectralContrast(14) + ZCR(2) + RMS(2) = 82 features
 - **ML models:** SVM (RBF, C=10) và Random Forest (n=200)
-- **Dataset:** train-data/original-genres/ (10 genres, ~900 files), test-data/ (~100 files)
+- **Dataset:** train-data/genres_original/ (10 genres, ~900 files), test-data/ (~100 files)
 
 ## Code Reference
 

@@ -55,7 +55,7 @@ Hệ thống gồm 2 module độc lập, chạy trong Jupyter Notebook:
 ┌─────────────────────────────────────────────────────────┐
 │                 ml_classification.ipynb                  │
 │                                                         │
-│  [Dataset: train-data/original-genres/]                 │
+│  [Dataset: train-data/genres_original/]                 │
 │    10 genres × 90 files = 900 training samples          │
 │         │                                               │
 │         ▼                                               │
@@ -138,7 +138,7 @@ output[n] = Σ(i=1 to 10) y_band_i[n]
 
 ### 4.1 Dataset
 
-- **Train:** `train-data/original-genres/` — 10 genres × ~90 files = ~900 samples
+- **Train:** `train-data/genres_original/` — 10 genres × ~90 files = ~900 samples
 - **Test:** `test-data/` — 10 genres × ~10 files = ~100 samples
 - **Genres:** blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock
 - **Format:** `.wav`, 30 giây/file, 22050 Hz
@@ -171,12 +171,12 @@ output[n] = Σ(i=1 to 10) y_band_i[n]
 
 | Thành viên | Role | Nhiệm vụ |
 |------------|------|----------|
-| **TV1** | DSP Lead | FIR filter design, band configuration, filter testing |
-| **TV2** | DSP / Viz | Audio loading, waveform/spectrum visualization, output |
-| **TV3** | ML Lead | Feature extraction (MFCC, Chroma...), model training |
-| **TV4** | ML / Report | Model evaluation, confusion matrix, viết báo cáo tổng hợp |
+| **Bắc** | DSP Lead | FIR filter design, band configuration, filter testing |
+| **Nhân** | DSP / Viz | Audio loading, waveform/spectrum visualization, output |
+| **Việt Anh** | ML Lead | Feature extraction (MFCC, Chroma...), model training |
+| **Quang** | ML / Report | Model evaluation, confusion matrix, viết báo cáo tổng hợp |
 
-> **Lưu ý:** TV1 và TV2 làm `equalizer.ipynb`, TV3 và TV4 làm `ml_classification.ipynb`. Mỗi người viết phần "Phản ánh kết quả cá nhân" trong báo cáo.
+> **Lưu ý:** Bắc và Nhân làm `equalizer.ipynb`, Việt Anh và Quang làm `ml_classification.ipynb`. Mỗi người viết phần "Phản ánh kết quả cá nhân" trong báo cáo.
 
 ---
 
@@ -211,7 +211,7 @@ dsp-final/
 ├── report-outline.md        # Outline báo cáo
 ├── test-plan.md             # Kế hoạch test
 ├── train-data/              # Dataset training (10 genres)
-│   └── original-genres/
+│   └── genres_original/
 │       ├── blues/
 │       ├── classical/
 │       └── ...

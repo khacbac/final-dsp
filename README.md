@@ -9,7 +9,7 @@ Dự án gồm 2 module chạy trong Jupyter Notebook, và **Streamlit Web App**
 | Module            | File                      | Mô tả                                            |
 | ----------------- | ------------------------- | ------------------------------------------------ |
 | FIR Equalizer     | `equalizer.ipynb`         | Bộ cân bằng âm thanh 10 bands, FIR Hamming       |
-| ML Classifier     | `ml_classification.ipynb` | Phân loại 10 thể loại nhạc (SVM + Random Forest) |
+| ML Classifier     | `ml_classification.ipynb` | Phân loại 10 thể loại nhạc (SVM 62.6%, RF 51.6% test) |
 | **Streamlit App** | `app.py`                  | GUI web: Equalizer + Phân loại thể loại          |
 
 ---
@@ -43,7 +43,7 @@ python -c "import numpy, scipy, librosa, soundfile, matplotlib, sklearn; print('
 
 Thư mục `train-data/` và `test-data/` **không có sẵn trong repo** (đã thêm vào `.gitignore` do kích thước lớn). Bạn cần tự chuẩn bị dataset để huấn luyện model:
 
-- **train-data/original-genres/** — Mỗi genre một thư mục (blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock), chứa file `.wav`
+- **train-data/genres_original/** — Mỗi genre một thư mục (blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock), chứa file `.wav`
 - **test-data/** — Cấu trúc tương tự, dùng để kiểm thử
 
 Có thể dùng [GTZAN Dataset](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification) hoặc dataset tương tự.
@@ -128,7 +128,7 @@ dsp-final/
 ├── report-outline.md          # Outline báo cáo 15 trang
 ├── test-plan.md               # Kế hoạch test
 ├── train-data/                # (bạn cần tự chuẩn bị — không có trong repo)
-│   └── original-genres/
+│   └── genres_original/
 │       ├── blues/             # ~90 files .wav
 │       ├── classical/
 │       ├── country/
@@ -165,7 +165,7 @@ dsp-final/
 | Thông số | Giá trị                                                                       |
 | -------- | ----------------------------------------------------------------------------- |
 | Features | 82 (MFCC × 40, Chroma × 24, Contrast × 14, ZCR × 2, RMS × 2)                  |
-| Models   | SVM (RBF) + Random Forest (n=200)                                             |
+| Models   | SVM (RBF) + Random Forest (n=200) — Test: SVM 62.6%, RF 51.6%                |
 | Genres   | 10 (blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock) |
 
 ---

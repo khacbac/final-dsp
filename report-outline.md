@@ -13,21 +13,21 @@
 **Kết quả đạt được:**
 - ✅ Thiết kế thành công bộ FIR 10-band, áp dụng trên file .wav
 - ✅ Trực quan hóa waveform và phổ tần số trước/sau equalizer
-- ✅ Phân loại được 10 thể loại nhạc với độ chính xác ~X% (điền sau khi chạy)
+- ✅ Phân loại được 10 thể loại nhạc (SVM: 62.6%, RF: 51.6% trên test set)
 - ✅ Xuất file âm thanh đã cân bằng
 
 **Kết quả chưa đạt được:**
 - ❌ Chưa xử lý realtime (chỉ dừng ở file-based processing)
-- ❌ Chưa có GUI đồ họa độc lập (chạy trong Jupyter)
+- ✅ Đã có Streamlit Web App (Equalizer + Phân loại thể loại)
 
 **Đóng góp thành viên:**
 
 | Thành viên | Vai trò | Đóng góp |
 |------------|---------|----------|
-| [TV1] | DSP Lead | 25% — Thiết kế FIR filter, cấu hình bands |
-| [TV2] | DSP / Visualization | 25% — Load audio, plot waveform/spectrum, output |
-| [TV3] | ML Lead | 25% — Feature extraction, train model |
-| [TV4] | ML / Báo cáo | 25% — Đánh giá model, viết báo cáo |
+| Bắc | DSP Lead | 25% — Thiết kế FIR filter, cấu hình bands |
+| Nhân | DSP / Visualization | 25% — Load audio, plot waveform/spectrum, output |
+| Việt Anh | ML Lead | 25% — Feature extraction, train model |
+| Quang | ML / Báo cáo | 25% — Đánh giá model, viết báo cáo |
 
 ---
 
@@ -231,7 +231,7 @@ def apply_equalizer(audio, fs, gains_db, bands, numtaps=1025):
 3. **Classification Report** (in ra dạng bảng)
 
 **Biện luận kết quả:**
-- Accuracy đạt được: X% (SVM), Y% (RF)
+- Accuracy đạt được: 62.6% (SVM), 51.6% (RF)
 - Nhạc thể loại nào khó phân loại nhất? Tại sao?
 - (Ví dụ: country vs rock có thể nhầm vì nhịp điệu tương tự)
 
@@ -239,11 +239,12 @@ def apply_equalizer(audio, fs, gains_db, bands, numtaps=1025):
 
 **Kết quả đạt được:**
 - Bộ lọc FIR hoạt động đúng (frequency response phù hợp thiết kế)
+- Streamlit Web App: Equalizer + Phân loại thể loại
 - ...
 
 **Kết quả chưa đạt được / Hạn chế:**
 - Chưa xử lý realtime (yêu cầu thêm PyAudio + threading)
-- Chưa có GUI tương tác (chỉ Jupyter)
+- Accuracy ML dưới 70% (SVM 62.6%, RF 51.6%) — có thể do overfitting hoặc dataset nhỏ
 - ...
 
 ---
@@ -252,19 +253,19 @@ def apply_equalizer(audio, fs, gains_db, bands, numtaps=1025):
 
 > Mỗi thành viên viết phần của mình.
 
-**Thành viên 1 ([Tên]) — DSP Lead:**
+**Bắc — DSP Lead:**
 - Công việc được giao: ...
 - Kết quả thực hiện: ...
 - Khó khăn gặp phải: ...
 - Bài học rút ra: ...
 
-**Thành viên 2 ([Tên]) — DSP / Visualization:**
+**Nhân — DSP / Visualization:**
 - ...
 
-**Thành viên 3 ([Tên]) — ML Lead:**
+**Việt Anh — ML Lead:**
 - ...
 
-**Thành viên 4 ([Tên]) — ML / Báo cáo:**
+**Quang — ML / Báo cáo:**
 - ...
 
 ---

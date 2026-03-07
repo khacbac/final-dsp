@@ -1,5 +1,6 @@
 # Chỉ ignore những mục hiện có — file/folder mới thêm sẽ được track
 .DS_Store
+.claude/
 audio-equalizer-master/
 example/
 final-project.md
