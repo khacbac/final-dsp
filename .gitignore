@@ -1,10 +1,23 @@
-# Chỉ ignore những mục hiện có — file/folder mới thêm sẽ được track
+# Hệ điều hành & IDE
 .DS_Store
+
+# Môi trường phát triển (không nộp)
 .claude/
+.cursor/
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv/
+venv/
+
+# Code tham khảo (không nộp)
 audio-equalizer-master/
-example/
-final-project.md
 music-equalizer/
+example/
+
+# File nội bộ
+final-project.md
 
 # ML Classifier — dataset không đưa vào repo (kích thước lớn)
 train-data/

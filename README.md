@@ -142,8 +142,9 @@ dsp-final/
 ├── test-data/                 # (bạn cần tự chuẩn bị — không có trong repo)
 │   ├── blues/                 # ~10 files .wav
 │   └── ...
-├── audio-equalizer-master/    # Code tham khảo (IIR)
-└── music-equalizer/           # Code tham khảo (FFT)
+├── equalizer-input/           # File mẫu cho equalizer
+├── equalizer-output/          # Đầu ra equalizer
+└── ml-classification-output/ # Đầu ra ML (biểu đồ, confusion matrix)
 ```
 
 ---
@@ -175,3 +176,13 @@ dsp-final/
 - SciPy `firwin`: https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html
 - Librosa: https://librosa.org/doc/latest/index.html
 - GTZAN Dataset: Tzanetakis & Cook, 2002
+
+---
+
+## Checklist Trước Khi Nộp
+
+- [ ] Chạy `equalizer.ipynb` → Kernel Restart & Run All (không lỗi)
+- [ ] Chạy `ml_classification.ipynb` → Kernel Restart & Run All (không lỗi)
+- [ ] Export model: chạy cell "Export Model cho Streamlit App" trong `ml_classification.ipynb`
+- [ ] Chạy `streamlit run app.py` để kiểm tra GUI
+- [ ] Báo cáo Word (15 trang) + Slide đã hoàn thành
