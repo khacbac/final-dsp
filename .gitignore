@@ -4,3 +4,7 @@ audio-equalizer-master/
 example/
 final-project.md
 music-equalizer/
+
+# ML Classifier — dataset không đưa vào repo (kích thước lớn)
+train-data/
+test-data/

@@ -38,6 +38,15 @@ pip install numpy scipy librosa soundfile matplotlib seaborn scikit-learn ipywid
 python -c "import numpy, scipy, librosa, soundfile, matplotlib, sklearn; print('OK')"
 ```
 
+### Data cho ML Classifier
+
+Thư mục `train-data/` và `test-data/` **không có sẵn trong repo** (đã thêm vào `.gitignore` do kích thước lớn). Bạn cần tự chuẩn bị dataset để huấn luyện model:
+
+- **train-data/original-genres/** — Mỗi genre một thư mục (blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock), chứa file `.wav`
+- **test-data/** — Cấu trúc tương tự, dùng để kiểm thử
+
+Có thể dùng [GTZAN Dataset](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification) hoặc dataset tương tự.
+
 ---
 
 ## Cách Chạy
@@ -115,7 +124,7 @@ dsp-final/
 ├── SPEC.md                    # Kiến trúc & phân công
 ├── report-outline.md          # Outline báo cáo 15 trang
 ├── test-plan.md               # Kế hoạch test
-├── train-data/
+├── train-data/                # (bạn cần tự chuẩn bị — không có trong repo)
 │   └── original-genres/
 │       ├── blues/             # ~90 files .wav
 │       ├── classical/
@@ -127,7 +136,7 @@ dsp-final/
 │       ├── pop/
 │       ├── reggae/
 │       └── rock/
-├── test-data/
+├── test-data/                 # (bạn cần tự chuẩn bị — không có trong repo)
 │   ├── blues/                 # ~10 files .wav
 │   └── ...
 ├── audio-equalizer-master/    # Code tham khảo (IIR)
