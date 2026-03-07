@@ -1,0 +1,8 @@
+# Chỉ ignore những mục hiện có — file/folder mới thêm sẽ được track
+.DS_Store
+audio-equalizer-master/
+example/
+final-project.md
+music-equalizer/
+test-data/
+train-data/
