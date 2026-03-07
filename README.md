@@ -4,12 +4,13 @@
 
 ## Tổng Quan
 
-Dự án gồm 2 module chạy trong Jupyter Notebook:
+Dự án gồm 2 module chạy trong Jupyter Notebook, và **Streamlit Web App** để tương tác:
 
 | Module | File | Mô tả |
 |--------|------|-------|
 | FIR Equalizer | `equalizer.ipynb` | Bộ cân bằng âm thanh 10 bands, FIR Hamming |
 | ML Classifier | `ml_classification.ipynb` | Phân loại 10 thể loại nhạc (SVM + Random Forest) |
+| **Streamlit App** | `app.py` | GUI web: Equalizer + Phân loại thể loại |
 
 ---
 
@@ -28,7 +29,7 @@ pip install -r requirements.txt
 Hoặc cài thủ công:
 
 ```bash
-pip install numpy scipy librosa soundfile matplotlib seaborn scikit-learn ipywidgets jupyter
+pip install numpy scipy librosa soundfile matplotlib seaborn scikit-learn ipywidgets jupyter streamlit joblib
 ```
 
 ### Kiểm tra cài đặt
@@ -63,7 +64,21 @@ Mở `equalizer.ipynb`:
   band_energy.png           — Năng lượng từng band
 ```
 
-### 3. Chạy ML Classifier
+### 3. Chạy Streamlit Web App (GUI)
+
+```bash
+streamlit run app.py
+```
+
+Mở trình duyệt tại http://localhost:8501
+
+**Tab Equalizer:** Upload file .wav → điều chỉnh 10 sliders → xem waveform/spectrum → tải file đã EQ.
+
+**Tab Phân Loại Thể Loại:** Upload file .wav → xem dự đoán thể loại + độ tin cậy.
+
+> **Lưu ý:** Tab Phân Loại cần model đã train. Chạy `ml_classification.ipynb` và thực thi cell "Export Model cho Streamlit App" để tạo `models/genre_model.joblib` và `models/label_encoder.joblib`.
+
+### 4. Chạy ML Classifier
 
 Mở `ml_classification.ipynb`:
 - Đảm bảo thư mục `train-data/` và `test-data/` tồn tại
@@ -86,6 +101,13 @@ Mở `ml_classification.ipynb`:
 
 ```
 dsp-final/
+├── app.py                     # Streamlit Web App (Equalizer + Classifier)
+├── core/
+│   ├── equalizer.py           # Logic FIR equalizer
+│   └── ml_classifier.py       # Logic ML phân loại
+├── models/                    # Model đã train (tạo từ notebook)
+│   ├── genre_model.joblib
+│   └── label_encoder.joblib
 ├── equalizer.ipynb            # Module 1: FIR Equalizer
 ├── ml_classification.ipynb    # Module 2: ML Genre Classifier
 ├── requirements.txt           # Danh sách thư viện
