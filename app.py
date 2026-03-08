@@ -93,18 +93,13 @@ def plot_spectrum(audio_orig, audio_eq, fs, gains_db):
     return fig
 
 
-def render_equalizer_tab():
-    """Tab Equalizer."""
+def render_equalizer_tab(data):
+    """Tab Equalizer. Dùng file đã upload ở sidebar (data = bytes)."""
     st.header('Bộ Cân Bằng Âm Thanh Số (FIR 10-band)')
 
-    # Sidebar
+    # Preset trong sidebar (upload đã chuyển lên main)
     with st.sidebar:
-        st.subheader('Cài đặt')
-        uploaded = st.file_uploader(
-            'Chọn file .wav',
-            type=['wav'],
-            help='Upload file âm thanh để cân bằng',
-        )
+        st.subheader('Cài đặt Equalizer')
         preset_name = st.selectbox(
             'Preset',
             options=list(PRESETS.keys()),
@@ -112,13 +107,12 @@ def render_equalizer_tab():
             help='Chọn preset có sẵn (sliders sẽ cập nhật)',
         )
 
-    if not uploaded:
+    if not data:
         st.info('👆 Upload file .wav ở sidebar để bắt đầu.')
         return
 
     # Load audio
     try:
-        data = uploaded.read()
         audio_orig, fs = load_audio_from_bytes(data)
     except Exception as e:
         st.error(f'Không thể đọc file: {e}')
@@ -177,8 +171,8 @@ def render_equalizer_tab():
     )
 
 
-def render_classifier_tab():
-    """Tab Genre Classifier."""
+def render_classifier_tab(data):
+    """Tab Genre Classifier. Dùng file đã upload ở sidebar (data = bytes)."""
     st.header('Phân Loại Thể Loại Âm Nhạc')
 
     # Check if model exists
@@ -198,18 +192,11 @@ joblib.dump(le, "models/label_encoder.joblib")
 ''', language='python')
         return
 
-    uploaded = st.file_uploader(
-        'Upload file .wav để phân loại',
-        type=['wav'],
-        help='File âm thanh (ưu tiên 30 giây, 22050 Hz)',
-    )
-
-    if not uploaded:
-        st.info('👆 Upload file .wav để phân loại thể loại nhạc.')
+    if not data:
+        st.info('👆 Upload file .wav ở sidebar để phân loại thể loại nhạc.')
         return
 
     # Save to temp file (extract_features cần file path)
-    data = uploaded.read()
     with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as tmp:
         tmp.write(data)
         tmp_path = tmp.name
@@ -273,13 +260,27 @@ def main():
     st.title('🎵 Bộ Cân Bằng Âm Thanh Số & Phân Loại Thể Loại Nhạc')
     st.caption('DSP Final Project — Nhóm ABNQ')
 
+    # Upload file chung ở sidebar — dùng cho cả Equalizer và Phân Loại Thể Loại
+    with st.sidebar:
+        st.subheader('File âm thanh')
+        uploaded = st.file_uploader(
+            'Chọn file .wav',
+            type=['wav'],
+            help='Upload file âm thanh — dùng cho Equalizer và Phân loại thể loại',
+        )
+        if uploaded:
+            st.caption(f'📁 {uploaded.name}')
+
+    # Đọc file 1 lần để dùng chung cho cả 2 tab (tránh read() bị consume)
+    data = uploaded.read() if uploaded else None
+
     tab1, tab2 = st.tabs(['Equalizer', 'Phân Loại Thể Loại'])
 
     with tab1:
-        render_equalizer_tab()
+        render_equalizer_tab(data)
 
     with tab2:
-        render_classifier_tab()
+        render_classifier_tab(data)
 
 
 if __name__ == '__main__':
