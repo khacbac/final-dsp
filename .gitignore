@@ -20,5 +20,5 @@ example/
 final-project.md
 
 # ML Classifier — dataset không đưa vào repo (kích thước lớn)
-train-data/
-test-data/
+# train-data/
+# test-data/
