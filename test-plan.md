@@ -281,14 +281,14 @@ def test_predict_known_genre(model, scaler, le):
 
 | Bước | Test | File | Người thực hiện |
 |------|------|------|-----------------|
-| 1 | `test_fir_bandpass_attenuation()` | equalizer.ipynb | Bắc |
-| 2 | `test_band_coverage()` | equalizer.ipynb | Bắc |
-| 3 | `test_gain_application()` | equalizer.ipynb | Nhân |
-| 4 | `test_linear_phase()` | equalizer.ipynb | Bắc |
-| 5 | TC01: Flat EQ với WAV file | equalizer.ipynb | Nhân |
-| 6 | TC04: No clipping check | equalizer.ipynb | Nhân |
-| 7 | `test_feature_extraction()` | ml_classification.ipynb | Việt Anh |
-| 8 | `test_model_accuracy()` SVM | ml_classification.ipynb | Việt Anh |
+| 1 | `test_fir_bandpass_attenuation()` | equalizer.ipynb | Nhân |
+| 2 | `test_band_coverage()` | equalizer.ipynb | Nhân |
+| 3 | `test_gain_application()` | equalizer.ipynb | Việt Anh |
+| 4 | `test_linear_phase()` | equalizer.ipynb | Nhân |
+| 5 | TC01: Flat EQ với WAV file | equalizer.ipynb | Việt Anh |
+| 6 | TC04: No clipping check | equalizer.ipynb | Việt Anh |
+| 7 | `test_feature_extraction()` | ml_classification.ipynb | Bắc |
+| 8 | `test_model_accuracy()` SVM | ml_classification.ipynb | Bắc |
 | 9 | `test_model_accuracy()` RF | ml_classification.ipynb | Quang |
 | 10 | `test_predict_known_genre()` | ml_classification.ipynb | Quang |
 

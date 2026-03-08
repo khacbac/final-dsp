@@ -171,12 +171,12 @@ output[n] = Σ(i=1 to 10) y_band_i[n]
 
 | Thành viên | Role | Nhiệm vụ |
 |------------|------|----------|
-| **Bắc** | DSP Lead | FIR filter design, band configuration, filter testing |
-| **Nhân** | DSP / Viz | Audio loading, waveform/spectrum visualization, output |
-| **Việt Anh** | ML Lead | Feature extraction (MFCC, Chroma...), model training |
+| **Nhân** | DSP Lead | FIR filter design, band configuration, filter testing |
+| **Việt Anh** | DSP / Viz | Audio loading, waveform/spectrum visualization, output |
+| **Bắc** | ML Lead | Feature extraction (MFCC, Chroma...), model training |
 | **Quang** | ML / Report | Model evaluation, confusion matrix, viết báo cáo tổng hợp |
 
-> **Lưu ý:** Bắc và Nhân làm `equalizer.ipynb`, Việt Anh và Quang làm `ml_classification.ipynb`. Mỗi người viết phần "Phản ánh kết quả cá nhân" trong báo cáo.
+> **Lưu ý:** Nhân và Việt Anh làm `equalizer.ipynb`, Bắc và Quang làm `ml_classification.ipynb`. Mỗi người viết phần "Phản ánh kết quả cá nhân" trong báo cáo.
 
 ---
 

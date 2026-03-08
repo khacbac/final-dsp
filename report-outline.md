@@ -24,9 +24,9 @@
 
 | Thành viên | Vai trò | Đóng góp |
 |------------|---------|----------|
-| Bắc | DSP Lead | 25% — Thiết kế FIR filter, cấu hình bands |
-| Nhân | DSP / Visualization | 25% — Load audio, plot waveform/spectrum, output |
-| Việt Anh | ML Lead | 25% — Feature extraction, train model |
+| Nhân | DSP Lead | 25% — Thiết kế FIR filter, cấu hình bands |
+| Việt Anh | DSP / Visualization | 25% — Load audio, plot waveform/spectrum, output |
+| Bắc | ML Lead | 25% — Feature extraction, train model |
 | Quang | ML / Báo cáo | 25% — Đánh giá model, viết báo cáo |
 
 ---
@@ -253,16 +253,16 @@ def apply_equalizer(audio, fs, gains_db, bands, numtaps=1025):
 
 > Mỗi thành viên viết phần của mình.
 
-**Bắc — DSP Lead:**
+**Nhân — DSP Lead:**
 - Công việc được giao: ...
 - Kết quả thực hiện: ...
 - Khó khăn gặp phải: ...
 - Bài học rút ra: ...
 
-**Nhân — DSP / Visualization:**
+**Việt Anh — DSP / Visualization:**
 - ...
 
-**Việt Anh — ML Lead:**
+**Bắc — ML Lead:**
 - ...
 
 **Quang — ML / Báo cáo:**
