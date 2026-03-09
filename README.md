@@ -83,11 +83,11 @@ streamlit run app.py
 
 Mở trình duyệt tại http://localhost:8501
 
-**Tab Equalizer:** Upload file .wav → điều chỉnh 10 sliders → xem waveform/spectrum → tải file đã EQ.
+**Giao diện:** Single-page layout — Upload file .wav ở sidebar → Genre block hiển thị thể loại dự đoán (compact) → Equalizer với 10 vertical sliders, spectrum, waveform, audio player, download.
 
-**Tab Phân Loại Thể Loại:** Upload file .wav → xem dự đoán thể loại + độ tin cậy.
+**Lưu ý:** Phân loại thể loại cần model đã train. Chạy `ml_classification.ipynb` và thực thi cell "Export Model cho Streamlit App" để tạo `models/genre_model.joblib` và `models/label_encoder.joblib`.
 
-> **Lưu ý:** Tab Phân Loại cần model đã train. Chạy `ml_classification.ipynb` và thực thi cell "Export Model cho Streamlit App" để tạo `models/genre_model.joblib` và `models/label_encoder.joblib`.
+**Biến môi trường (tùy chọn):** Không bắt buộc. Cấu hình server trong `.streamlit/config.toml` (maxUploadSize, enableCORS, enableXsrfProtection).
 
 ### 4. Chạy ML Classifier
 

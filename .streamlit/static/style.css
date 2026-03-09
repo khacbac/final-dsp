@@ -1,0 +1,60 @@
+/* Custom CSS for DSP Equalizer & Genre Classifier - Dark theme polish */
+
+/* Main layout - improve spacing and max width */
+.stApp {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Card-like sections - waveform, spectrum, results */
+.stContainer {
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+/* File uploader - cleaner appearance */
+[data-testid="stFileUploader"] {
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+[data-testid="stFileUploader"] section {
+    border-radius: 8px;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+/* Slider styling - match theme accent */
+.stSlider [data-baseweb="slider"] {
+    background: rgba(99, 102, 241, 0.2);
+}
+
+/* Buttons - subtle hover */
+.stButton > button {
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-1px);
+}
+
+/* Download button - prominent */
+.stDownloadButton > button {
+    font-weight: 600;
+}
+
+/* Success/info blocks - genre block */
+[data-testid="stAlert"] {
+    border-radius: 8px;
+}
+
+/* Expander - full distribution */
+.streamlit-expanderHeader {
+    border-radius: 6px;
+}

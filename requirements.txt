@@ -9,4 +9,6 @@ ipywidgets>=8.0
 jupyter>=1.0
 notebook>=7.0
 streamlit>=1.28
+streamlit-vertical-slider>=2.5.5
+streamlit_toggle
 joblib>=1.3
